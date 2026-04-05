@@ -35,7 +35,7 @@ nav.sc{background:rgba(237,235,228,.94);backdrop-filter:blur(8px);border-color:v
 .sec{padding:88px 0}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}
+#hero{display:flex;align-items:center;padding:140px 0 88px}
 .hero-name{font-family:var(--serif);font-size:clamp(42px,6vw,68px);font-weight:400;line-height:1.08;letter-spacing:-.015em;color:var(--t1);margin-bottom:28px;animation:fu .65s ease both}
 .hero-name em{font-style:italic;color:var(--ac)}
 .hero-p{max-width:var(--col);color:var(--t2);font-size:15px;line-height:1.85;text-align:justify;animation:fu .65s .1s ease both}
@@ -76,8 +76,8 @@ nav.sc{background:rgba(237,235,228,.94);backdrop-filter:blur(8px);border-color:v
 /* bullets */
 .cb{padding:18px 24px 20px}
 .cb ul{list-style:none;display:flex;flex-direction:column;gap:12px}
-.cb li{display:flex;gap:12px;font-size:14px;color:var(--t2);line-height:1.75;text-align:justify}
-.cb li::before{content:'·';color:var(--ac);font-size:22px;line-height:1.2;flex-shrink:0;margin-top:-1px}
+.cb li{font-size:14px;color:var(--t2);line-height:1.75;text-align:justify;padding-left:16px;position:relative}
+.cb li::before{content:'·';color:var(--ac);font-size:22px;line-height:1.2;position:absolute;left:0;top:-1px}
 .cb li strong{color:var(--t1);font-weight:500}
 
 /* awards */
@@ -496,7 +496,7 @@ footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spac
       <div class="ch2">Say hello.</div>
       <p class="cp">I'm always open to conversations about product strategy, Gen AI in regulated industries, or building at the intersection of product and engineering. If something here resonated, I'd welcome a conversation.</p>
       <div class="cbs">
-        <a href="mailto:manaswin.pandey@gmail.com" class="cb2 pr">manaswin.pandey@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#9ff2fef1feece8f6f1b1effef1fbfae6dff8f2fef6f3b1fcf0f2" class="cb2 pr"><span class="__cf_email__" data-cfemail="87eae6e9e6f4f0eee9a9f7e6e9e3e2fec7e0eae6eeeba9e4e8ea">[email&#160;protected]</span></a>
         <a href="https://linkedin.com/in/manaswinpandey" target="_blank" class="cb2 ou">LinkedIn</a>
         <a href="tel:+919708016081" class="cb2 ou">+91 97080 16081</a>
       </div>
@@ -509,7 +509,7 @@ footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spac
   <span>Built with Claude, shipped with taste.</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>36));
 function tog(btn,id){const p=document.getElementById(id);const o=p.classList.toggle('op');btn.classList.toggle('op',o)}
