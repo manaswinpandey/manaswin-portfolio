@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manaswin Pandey — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#edebe4;--bg2:#e5e2d9;--bg3:#dedad0;--card:#f2f0e9;
+  --b1:rgba(40,35,20,0.12);--b2:rgba(40,35,20,0.20);
+  --t1:#1a1814;--t2:#5c5444;--t3:#968b78;
+  --ac:#3d7a6f;--ac2:rgba(61,122,111,0.11);--ac3:rgba(61,122,111,0.28);
+  --serif:'Lora',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+  --col:620px
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:15px;line-height:1.8;font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-bottom:1px solid transparent;transition:background .35s,border-color .35s}
+nav.sc{background:rgba(237,235,228,.94);backdrop-filter:blur(8px);border-color:var(--b1)}
+.nav-logo{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--t1);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--t2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-links a:hover{color:var(--ac)}
+
+/* LAYOUT */
+.wrap{max-width:1040px;margin:0 auto;padding:0 56px}
+.divider{border:none;border-top:1px solid var(--b1);margin:0}
+.label{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:22px;display:block}
+.sec{padding:88px 0}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}
+.hero-name{font-family:var(--serif);font-size:clamp(42px,6vw,68px);font-weight:400;line-height:1.08;letter-spacing:-.015em;color:var(--t1);margin-bottom:28px;animation:fu .65s ease both}
+.hero-name em{font-style:italic;color:var(--ac)}
+.hero-p{max-width:var(--col);color:var(--t2);font-size:15px;line-height:1.85;text-align:justify;animation:fu .65s .1s ease both}
+.hero-p+.hero-p{margin-top:14px}
+.hero-p strong{color:var(--t1);font-weight:400}
+
+/* PROSE */
+.pullquote{border-left:2.5px solid var(--ac);background:var(--ac2);padding:18px 24px;margin:24px 0 20px;font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.72;color:var(--t1);max-width:var(--col)}
+.prose{max-width:var(--col);color:var(--t2);font-size:15px;line-height:1.85;text-align:justify}
+.prose+.prose{margin-top:14px}
+.prose strong{color:var(--t1);font-weight:400}
+
+/* SH */
+.sh{font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:-.01em;line-height:1.1;margin-bottom:12px}
+.sh-sub{max-width:var(--col);font-size:15px;color:var(--t2);line-height:1.85;text-align:justify;margin-bottom:44px}
+
+/* WORK COMPANY */
+.work-co{font-family:var(--serif);font-size:38px;font-weight:400;letter-spacing:-.01em;line-height:1.1;margin-bottom:10px}
+.work-intro{max-width:var(--col);color:var(--t2);font-size:15px;line-height:1.85;text-align:justify;margin-bottom:32px}
+
+/* CARD */
+.card{border:1px solid var(--b2);background:var(--card);border-radius:2px;margin-bottom:16px}
+
+/* card top row */
+.ct{padding:20px 24px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--b1)}
+.ct-title{font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:3px;line-height:1.2}
+.ct-meta{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spacing:.04em}
+.badge{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);border:1px solid var(--ac3);background:var(--ac2);padding:4px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+/* stats row — 4 col, carefully contained */
+.sr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--b1)}
+.s{padding:14px 18px;border-right:1px solid var(--b1)}
+.s:last-child{border-right:none}
+.sl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:5px;line-height:1.3}
+.sv{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--t1);line-height:1.05;margin-bottom:4px}
+.ss{font-size:11px;color:var(--t3);line-height:1.4}
+
+/* bullets */
+.cb{padding:18px 24px 20px}
+.cb ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.cb li{display:flex;gap:12px;font-size:14px;color:var(--t2);line-height:1.75;text-align:justify}
+.cb li::before{content:'·';color:var(--ac);font-size:22px;line-height:1.2;flex-shrink:0;margin-top:-1px}
+.cb li strong{color:var(--t1);font-weight:500}
+
+/* awards */
+.awards{display:flex;gap:20px;flex-wrap:wrap;padding:12px 24px;border-top:1px solid var(--b1);background:var(--bg2)}
+.aw{font-family:var(--mono);font-size:10.5px;color:var(--ac);letter-spacing:.03em;display:flex;align-items:center;gap:7px}
+.aw::before{content:'★';font-size:9px}
+
+/* earlier */
+.e-btn{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:1px solid var(--b1);padding:11px 18px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--t2);border-radius:2px;transition:background .2s,color .2s;margin-top:16px}
+.e-btn:hover{background:var(--bg2);color:var(--t1)}
+.e-btn .arr{font-size:9px;transition:transform .3s}
+.e-btn.op .arr{transform:rotate(180deg)}
+.e-panel{display:none;padding:20px 0 4px}
+.e-panel.op{display:block}
+.e-role{display:flex;gap:28px;padding:14px 0;border-bottom:1px solid var(--b1)}
+.e-role:last-child{border-bottom:none}
+.e-l{min-width:172px;flex-shrink:0}
+.e-co{font-family:var(--serif);font-size:16px;font-weight:400;margin-bottom:2px}
+.e-ti{font-family:var(--mono);font-size:10px;color:var(--t3);letter-spacing:.04em}
+.e-dt{font-family:var(--mono);font-size:10px;color:var(--t3);margin-top:3px}
+.e-r{font-size:13.5px;color:var(--t2);line-height:1.75;text-align:justify}
+.e-r p+p{margin-top:8px}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--b2)}
+.tli{position:relative;padding-bottom:38px}
+.tli:last-child{padding-bottom:0}
+.tld{position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:50%;border:1px solid var(--b2);background:var(--bg)}
+.tld.now{background:var(--ac);border-color:var(--ac)}
+.tl-date{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spacing:.05em;margin-bottom:5px}
+.tl-ti{font-family:var(--serif);font-size:20px;font-weight:400;line-height:1.2;margin-bottom:9px}
+.tl-b{font-size:14px;color:var(--t2);line-height:1.8;max-width:580px;text-align:justify;margin-bottom:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:10.5px;padding:3px 9px;border:1px solid var(--b2);color:var(--t2);border-radius:2px;letter-spacing:.02em}
+
+/* PROJECTS */
+.pi{max-width:var(--col);color:var(--t2);font-size:15px;line-height:1.85;text-align:justify;margin-bottom:40px}
+.pc{border:1px solid var(--b2);background:var(--card);border-radius:2px;margin-bottom:20px;overflow:hidden}
+.pt{padding:22px 26px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--b1)}
+.p-ti{font-family:var(--serif);font-size:23px;font-weight:400;line-height:1.15;margin-bottom:8px}
+.p-q{font-size:14px;color:var(--t2);line-height:1.75;max-width:520px;text-align:justify}
+.p-q strong{color:var(--t1);font-weight:500}
+.pb{padding:18px 26px 22px}
+.p-le{font-size:14px;color:var(--t2);line-height:1.8;text-align:justify;margin-bottom:18px;max-width:580px}
+.p-le strong{color:var(--t1);font-weight:500}
+
+/* 2-col stat grid */
+.ps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--b1);border-radius:2px;overflow:hidden;margin-bottom:18px}
+.psc{padding:13px 16px;background:var(--bg2)}
+.psc:nth-child(odd){border-right:1px solid var(--b1)}
+.psc:nth-child(-n+2){border-bottom:1px solid var(--b1)}
+
+/* accordion */
+.acc{border-top:1px solid var(--b1);margin-top:4px}
+.aci{border-bottom:1px solid var(--b1)}
+.aci:last-child{border-bottom:none}
+.acb{width:100%;background:none;border:none;padding:11px 26px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--ac);letter-spacing:.04em;text-align:left;transition:background .18s}
+.acb:hover{background:var(--ac2)}
+.acb .ch{font-size:9px;transition:transform .28s;flex-shrink:0;margin-left:12px}
+.acb.op .ch{transform:rotate(180deg)}
+.acbd{display:none;padding:16px 26px 20px;background:var(--bg2);font-size:13.5px;color:var(--t2);line-height:1.8}
+.acbd.op{display:block}
+.acbd p+p{margin-top:10px}
+.acbd ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.acbd li{display:flex;gap:10px}
+.acbd li::before{content:'→';color:var(--ac);flex-shrink:0;font-size:12px;margin-top:2px}
+.acbd strong{color:var(--t1);font-weight:500}
+.af{font-family:var(--mono);font-size:11.5px;color:var(--t2);line-height:2;padding:12px 0;border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);margin:12px 0}
+.ct2{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px}
+.ct2 th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);text-align:left;padding:7px 10px;border-bottom:1px solid var(--b2)}
+.ct2 td{padding:7px 10px;border-bottom:1px solid var(--b1);color:var(--t2)}
+.ct2 td:last-child{text-align:right}
+.ct2 tr:last-child td{color:var(--ac);font-family:var(--mono);font-weight:500;border-bottom:none}
+.steps{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.step{display:flex;gap:14px;font-size:13px;color:var(--t2);align-items:flex-start}
+.sn{font-family:var(--mono);font-size:9.5px;color:var(--ac);min-width:20px;margin-top:3px}
+
+/* PILLARS */
+.pillars{display:flex;flex-direction:column}
+.pillar{display:flex;gap:20px;align-items:flex-start;padding:26px 0;border-bottom:1px solid var(--b1)}
+.pillar:last-child{border-bottom:none}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.d1{background:var(--ac)}.d2{background:#6b8fae}.d3{background:#7a9e7a}.d4{background:#b08060}
+.pt2{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:7px;line-height:1.2}
+.pb2{font-size:14px;color:var(--t2);line-height:1.8;text-align:justify;max-width:560px}
+.pb2 strong{color:var(--t1);font-weight:400}
+
+/* CONTACT */
+#contact{padding:88px 0}
+.cw{max-width:520px;margin:0 auto;text-align:center;padding:44px 36px;border:1px solid var(--b2);background:var(--card);border-radius:2px}
+.ch2{font-family:var(--serif);font-size:32px;font-weight:400;margin-bottom:14px}
+.cp{font-size:14.5px;color:var(--t2);line-height:1.8;margin-bottom:28px;text-align:justify}
+.cbs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cb2{font-family:var(--mono);font-size:11.5px;padding:10px 20px;border-radius:2px;text-decoration:none;transition:all .2s;letter-spacing:.04em}
+.cb2.pr{background:var(--ac);color:#f2f0e9;border:1px solid var(--ac)}
+.cb2.pr:hover{opacity:.87}
+.cb2.ou{border:1px solid var(--b2);color:var(--t2)}
+.cb2.ou:hover{border-color:var(--ac);color:var(--ac)}
+
+/* FOOTER */
+footer{padding:20px 56px;border-top:1px solid var(--b1);display:flex;justify-content:space-between;align-items:center}
+footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spacing:.04em}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:720px){
+  nav{padding:16px 20px}.nav-links{display:none}
+  .wrap{padding:0 20px}
+  footer{padding:16px 20px;flex-direction:column;gap:6px;text-align:center}
+  .sr{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sr .s:nth-child(2){border-right:none}
+  .sr .s:nth-child(1),.sr .s:nth-child(2){border-bottom:1px solid var(--b1)}
+  .ps{grid-template-columns:1fr}
+  .psc:nth-child(odd){border-right:none}
+  .psc:nth-child(-n+2){border-bottom:1px solid var(--b1)}
+  .e-role{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#hero">Manaswin Pandey</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#timeline">AI timeline</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <span class="label">Product Management Portfolio</span>
+    <h1 class="hero-name">I own the why.<br><em>I can also ship the what.</em></h1>
+    <p class="hero-p">I'm Manaswin Pandey, a Senior Product Manager based in Gurugram with 12+ years across energy, strategy consulting, and enterprise life sciences SaaS. Currently at Indegene, leading a 28-person cross-functional team building AI-powered commercial products for global pharma clients.</p>
+    <p class="hero-p">I'm also serious about AI — not as a talking point, but as something I build with. I've shipped Gen AI into production inside one of the most regulated industries on the planet. And I've taken products from idea to deployed MVP over a weekend using Claude Code.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <span class="label">The Short Version</span>
+    <div class="pullquote">Most PMs talk about AI. I build with it. I've shipped a Gen AI content pipeline serving 2 enterprise pharma clients across 7 markets — cutting turnaround times by 50%. I've taken a full-stack SaaS from concept to deployed product in a weekend using Claude Code. I know the difference between Sonnet and Haiku, and more importantly, I know when to use which one and why.</div>
+    <p class="prose">But here's the thing: the AI work sits on top of a decade of building across genuinely different contexts. I started as a process engineer at Shell — optimising gas plant uptime with sensor data. Then strategy consulting to an MD at ONGC Videsh, building $50M acquisition business cases at board level. Then product leadership at Indegene, where I've secured investment for three 0→1 products, led teams of 28, and earned two promotions in four years.</p>
+    <p class="prose" style="margin-top:14px"><strong>AI is the latest chapter.</strong> And it's changing how I think about every chapter before it.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WORK -->
+<section id="work" class="sec">
+  <div class="wrap">
+    <span class="label">Where I Work</span>
+    <h2 class="work-co">Indegene</h2>
+    <p class="work-intro">Senior Product Manager, leading cross-functional teams of 28 — 3 PM direct reports, 25 engineering indirect reports — across the commercial content suite for global life sciences clients.</p>
+
+    <div class="card">
+      <div class="ct">
+        <div>
+          <div class="ct-title">Commercial Content Suite · Life Sciences B2B SaaS</div>
+          <div class="ct-meta">Gurugram &nbsp;·&nbsp; Mar 2020 – present</div>
+        </div>
+        <div class="badge">Senior PM</div>
+      </div>
+      <div class="sr">
+        <div class="s"><div class="sl">Revenue generated</div><div class="sv">$4M+</div><div class="ss">SaaS license across 0→1 launches</div></div>
+        <div class="s"><div class="sl">Content turnaround</div><div class="sv">−50%</div><div class="ss">Gen AI pipeline in production</div></div>
+        <div class="s"><div class="sl">Operational efficiency</div><div class="sv">+60%</div><div class="ss">AI/ML content tagging</div></div>
+        <div class="s"><div class="sl">Requirements rework</div><div class="sv">−50%</div><div class="ss">MVP-led validation</div></div>
+      </div>
+      <div class="cb">
+        <ul>
+          <li><strong>Gen AI content generation — pharma marketing:</strong> Led the build of a production AI pipeline creating derivative marketing assets from pre-approved content. Extraction → semantic mesh → intent-based retrieval → final output. Serving 2 enterprise clients across 7 markets, ~50–60 DAU, contributing ~30–40% of SaaS license revenue. In a regulated industry where most enterprise AI is still a pilot, this is in production.</li>
+          <li><strong>0→1 product investment:</strong> Secured senior leadership buy-in for three new products through market assessment and competitive benchmarking. Translated business cases into $4M+ in SaaS license revenue through go-to-market execution.</li>
+          <li><strong>AI/ML content tagging:</strong> Eliminated a manual bottleneck by shipping AI/ML-based tagging. 60% improvement in operational efficiency for content management workflows.</li>
+          <li><strong>Agentic Jira automation:</strong> Built a multi-agent system generating structured user stories from high-level inputs — giving junior PMs a requirements scaffold and reducing sprint planning back-and-forth.</li>
+          <li><strong>Customer-led product development:</strong> Established product-market fit through structured interviews with domain experts, analysts, and end customers — reducing requirements rework by 50%.</li>
+        </ul>
+      </div>
+      <div class="awards">
+        <div class="aw">PMO Excellence Award — Commercial Content Platform (May 2025)</div>
+        <div class="aw">Promoted twice in 4 years — top 5% performer</div>
+      </div>
+    </div>
+
+    <button class="e-btn" onclick="tog(this,'earlier')">Earlier career — ONGC Videsh &amp; Royal Dutch Shell <span class="arr">▼</span></button>
+    <div class="e-panel" id="earlier">
+      <div class="e-role">
+        <div class="e-l"><div class="e-co">ONGC Videsh</div><div class="e-ti">Strategy Consultant to MD</div><div class="e-dt">2018 – 2020</div></div>
+        <div class="e-r">
+          <p>Built the business case and renewables integration strategy that secured Executive Committee and Board approval for a $50M Singaporean fuel cell start-up acquisition.</p>
+          <p>Led portfolio optimisation across $1.5B South American assets — gap analysis with Shell and Qatar Petroleum stakeholders. Reduced cash call processing time by 33%.</p>
+        </div>
+      </div>
+      <div class="e-role">
+        <div class="e-l"><div class="e-co">Royal Dutch Shell</div><div class="e-ti">Senior Operations Engineer</div><div class="e-dt">2012 – 2017</div></div>
+        <div class="e-r">
+          <p>Achieved record 98% plant availability through sensor data analysis and control instrumentation optimisation. Key contributor to BG Group Annual Award 2015.</p>
+          <p>Managed water dumping project resulting in $1M annual increase in production revenue. Mentored 5 operators during crunch periods, maintaining 95%+ KPI performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TIMELINE -->
+<section id="timeline" class="sec">
+  <div class="wrap">
+    <span class="label">AI Proficiency Timeline</span>
+    <h2 class="sh">How I got here</h2>
+    <p class="sh-sub">This wasn't a single decision. It was a series of deliberate ones — each pulling me deeper into the AI ecosystem and expanding what I could build independently.</p>
+    <div class="tl">
+      <div class="tli"><div class="tld"></div>
+        <div class="tl-date">Late 2024 / Early 2025</div>
+        <div class="tl-ti">Discovery: AI as a thinking partner</div>
+        <p class="tl-b">Started with Claude and ChatGPT for everyday PM work: drafting PRDs, sharpening strategy documents, running competitive analysis. This phase was about developing a feel for what these models are genuinely good at, where they fall short, and how to prompt them with enough precision to trust the output.</p>
+        <div class="tags"><span class="tag">Prompt engineering</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span></div>
+      </div>
+      <div class="tli"><div class="tld"></div>
+        <div class="tl-date">Mid 2025</div>
+        <div class="tl-ti">First build: no-code AI tools</div>
+        <p class="tl-b">Built a quiz generation app — Lovable first for speed, Replit when I needed more control. First time going from "using AI to write" to "using AI to build." Discovered what AI-native builders abstract away, and where they hit a ceiling.</p>
+        <div class="tags"><span class="tag">Lovable</span><span class="tag">Replit</span><span class="tag">No-code to low-code</span></div>
+      </div>
+      <div class="tli"><div class="tld"></div>
+        <div class="tl-date">September 2025</div>
+        <div class="tl-ti">Levelling up: component-based frontends</div>
+        <p class="tl-b">Built thewaypoint.ai using 21st.dev's component library. Moved from drag-and-drop into composing real React components with Tailwind CSS. The mental model shifted from "pages" to "systems of reusable parts."</p>
+        <div class="tags"><span class="tag">21st.dev</span><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Component architecture</span></div>
+      </div>
+      <div class="tli"><div class="tld"></div>
+        <div class="tl-date">Late 2025</div>
+        <div class="tl-ti">Enterprise AI: RAG, cloud infrastructure, production</div>
+        <p class="tl-b">Shipped the Gen AI content generation pipeline at Indegene — LLMs and vision models for compliant pharma marketing, with semantic retrieval over pre-approved content libraries. First time owning a production AI system in a regulated industry. Human-in-the-loop review was a deliberate architecture decision, not a limitation to overcome.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">Vision models</span><span class="tag">Semantic retrieval</span><span class="tag">RAG</span><span class="tag">Google Cloud</span><span class="tag">HITL workflow</span></div>
+      </div>
+      <div class="tli"><div class="tld"></div>
+        <div class="tl-date">Early 2026</div>
+        <div class="tl-ti">Full-stack: databases, APIs, caching, deployment</div>
+        <p class="tl-b">Built Portfolio IQ end-to-end using Claude Code — Supabase, Upstash Redis, Finnhub, FRED, Vercel CI/CD. Went through the full design workflow: Google Stitch for exploration, Figma Pro for production design, Figma + MCP to connect designs directly to Claude-generated React code.</p>
+        <div class="tags"><span class="tag">Next.js 14</span><span class="tag">Supabase</span><span class="tag">Claude API</span><span class="tag">Claude Code</span><span class="tag">Figma + MCP</span><span class="tag">Vercel</span></div>
+      </div>
+      <div class="tli"><div class="tld now"></div>
+        <div class="tl-date">March 2026 to present</div>
+        <div class="tl-ti">Agentic workflows: building tools for teams</div>
+        <p class="tl-b">Built the Executive Update Copilot — a multi-agent application on Vertex AI giving junior PMs a scaffold for leadership communication. Core principle: AI-assisted judgment, not AI-asserted judgment. Deliberately incomplete outputs with bracket placeholders force the PM to own the judgment calls. Actively used by my direct reports.</p>
+        <div class="tags"><span class="tag">Vertex AI</span><span class="tag">Gemini</span><span class="tag">FastAPI</span><span class="tag">Multi-agent</span><span class="tag">Google Cloud Run</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects" class="sec">
+  <div class="wrap">
+    <span class="label">What I've Been Building</span>
+    <h2 class="sh">Things I built because I needed to know if I could</h2>
+    <p class="pi">Each project started with a question that mattered to me as a PM. The builds were the way to find the answer.</p>
+
+    <!-- GEN AI -->
+    <div class="pc">
+      <div class="pt"><div><div class="p-ti">Gen AI Content Generation</div><p class="p-q"><strong>The question:</strong> Enterprise AI adoption in regulated industries moves slowly — for good reason. Could you build something that genuinely works inside those constraints, not around them?</p></div><div class="badge">Shipped · Production · Enterprise</div></div>
+      <div class="pb">
+        <p class="p-le"><strong>What I learned:</strong> The hardest product decisions weren't about the AI model. They were about information architecture — structuring the content library so retrieval was precise, not approximate. And about scope: knowing which parts of the workflow AI could own versus which needed a human in the seat. Human-in-the-loop isn't a limitation to overcome — it's the right call for where enterprise AI adoption actually is today.</p>
+        <div class="ps">
+          <div class="psc"><div class="sl">Enterprise clients</div><div class="sv">2 clients</div><div class="ss">Global pharma</div></div>
+          <div class="psc"><div class="sl">Markets in production</div><div class="sv">7 markets</div><div class="ss">~50–60 DAU</div></div>
+          <div class="psc"><div class="sl">Revenue contribution</div><div class="sv">30–40%</div><div class="ss">Of $4M+ SaaS portfolio</div></div>
+          <div class="psc"><div class="sl">Turnaround improvement</div><div class="sv">−50%</div><div class="ss">Client content projects</div></div>
+        </div>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">Vision models</span><span class="tag">Semantic retrieval</span><span class="tag">RAG</span><span class="tag">HITL workflow</span><span class="tag">Life sciences</span></div>
+      </div>
+    </div>
+
+    <!-- EXEC COPILOT -->
+    <div class="pc">
+      <div class="pt"><div><div class="p-ti">Executive Update Copilot</div><p class="p-q"><strong>The question:</strong> Junior PMs often know what happened — but struggle to frame it for leadership. Could AI give them a scaffold to think through before anything goes upward?</p></div><div class="badge">Shipped · In Use</div></div>
+      <div class="pb">
+        <p class="p-le"><strong>What I learned:</strong> The hardest design decision wasn't technical — it was deciding what the AI <em>shouldn't</em> do. An AI that writes the update for you creates passive PMs. An AI that asks "what's the business impact?" and leaves space for the answer creates sharper ones. That line between assistance and abdication is a product judgment call. I made it deliberately.</p>
+        <div class="ps">
+          <div class="psc"><div class="sl">Architecture</div><div class="sv" style="font-size:18px">Multi-agent</div><div class="ss">Workflow, crisis, exec comms agents</div></div>
+          <div class="psc"><div class="sl">Design principle</div><div class="sv" style="font-size:18px">HITL by design</div><div class="ss">Brackets force judgment, not abdication</div></div>
+        </div>
+        <div class="tags"><span class="tag">Vertex AI</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">FastAPI</span><span class="tag">Google Cloud Run</span><span class="tag">Multi-agent</span></div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO IQ -->
+    <div class="pc">
+      <div class="pt"><div><div class="p-ti">Portfolio IQ</div><p class="p-q"><strong>The question:</strong> Can a product manager with no engineering background own the full technical lifecycle of an AI product — from database design to deployment?</p></div><div class="badge">Live in Production</div></div>
+      <div class="pb">
+        <p class="p-le"><strong>What I learned:</strong> Writing a thorough PRD before touching any code is what makes AI-assisted development fast. The skill isn't coding — it's specification, architecture decisions, and understanding cost trade-offs between models. That clarity is the same skill that makes cross-functional programmes work at scale.</p>
+        <div class="ps">
+          <div class="psc"><div class="sl">Build time</div><div class="sv">A weekend</div><div class="ss">Focused, end-to-end</div></div>
+          <div class="psc"><div class="sl">Project-specific cost</div><div class="sv">$5</div><div class="ss">Claude API; rest is free tier</div></div>
+          <div class="psc"><div class="sl">AI strategy</div><div class="sv" style="font-size:18px">Single vendor</div><div class="ss">Anthropic: Sonnet + Haiku</div></div>
+          <div class="psc"><div class="sl">Purpose</div><div class="sv" style="font-size:18px">PM → full-stack</div><div class="ss">Non-coder building end-to-end</div></div>
+        </div>
+        <div class="acc">
+          <div class="aci"><button class="acb" onclick="tacc(this)">▸ Full architecture: 12 tools, 7 layers <span class="ch">▼</span></button>
+            <div class="acbd"><div class="af">User → Cloudflare → Vercel → Next.js 14 → Serverless API routes → Upstash Redis → Claude Sonnet / Haiku → Supabase (Postgres + Auth + Storage) + Finnhub + FRED</div><p>Frontend in Next.js 14 with Tailwind CSS and shadcn/ui. Backend via serverless API routes — no dedicated server. Redis caching reduces Claude API calls by ~70% for repeated market queries. Supabase Row Level Security means the database enforces permissions, not application code.</p></div>
+          </div>
+          <div class="aci"><button class="acb" onclick="tacc(this)">▸ Design system: Stitch → Figma → MCP <span class="ch">▼</span></button>
+            <div class="acbd"><ul><li><strong>Google Stitch:</strong> Fast initial generation of design system and core screens. Great for exploration, limited for precision.</li><li><strong>Figma:</strong> Production-grade design system — proper component library, variants, auto-layout, design tokens, responsive breakpoints.</li><li><strong>Figma + MCP:</strong> Connected Figma to Claude via Model Context Protocol. Claude reads Figma specs directly and generates matching React code. The handoff isn't a PDF anymore — it's a conversation.</li></ul></div>
+          </div>
+          <div class="aci"><button class="acb" onclick="tacc(this)">▸ Cost breakdown: $5 to ship a full product <span class="ch">▼</span></button>
+            <div class="acbd">
+              <table class="ct2"><thead><tr><th>Service</th><th>What it does</th><th>Cost</th></tr></thead><tbody>
+                <tr><td>Supabase</td><td>Database, auth, file storage</td><td>$0</td></tr>
+                <tr><td>Upstash Redis</td><td>Caching layer</td><td>$0</td></tr>
+                <tr><td>Finnhub</td><td>Stock data + news</td><td>$0</td></tr>
+                <tr><td>FRED</td><td>Macro indicators</td><td>$0</td></tr>
+                <tr><td>Vercel</td><td>Hosting + domain</td><td>$0</td></tr>
+                <tr><td>Cloudflare</td><td>CDN + security</td><td>$0</td></tr>
+                <tr><td>GitHub</td><td>Code + CI/CD</td><td>$0</td></tr>
+                <tr><td>Google Stitch</td><td>Initial design</td><td>$0</td></tr>
+                <tr><td>Claude API</td><td>Signal generation + parsing</td><td>$5 credit</td></tr>
+                <tr><td>Claude Pro (incl. Claude Code)*</td><td>AI IDE + dev workflow</td><td>$20/mo</td></tr>
+                <tr><td>Figma Pro*</td><td>Design system + MCP bridge</td><td>$15/mo</td></tr>
+                <tr><td><strong>Project-specific spend</strong></td><td></td><td><strong>$5</strong></td></tr>
+              </tbody></table>
+              <p style="margin-top:10px;font-size:11.5px;color:var(--t3)">* Claude Pro and Figma Pro used daily for work — not costs specific to this build.</p>
+            </div>
+          </div>
+          <div class="aci"><button class="acb" onclick="tacc(this)">▸ Tool decisions: the PM thinking behind the stack <span class="ch">▼</span></button>
+            <div class="acbd"><ul>
+              <li><strong>Why single vendor?</strong> Claude Sonnet handles vision just as well. One vendor = one API key, one bill, one set of docs. Saved $5–10/month with zero capability loss.</li>
+              <li><strong>Why Supabase?</strong> Postgres + auth + storage in one free tier. Row Level Security means the database enforces permissions, not my code.</li>
+              <li><strong>Why near-zero cost on purpose?</strong> No financial risk means more experiments, more learning — and a real understanding of AI product economics.</li>
+              <li><strong>Why Claude Code?</strong> 10 sequential prompts. Each builds on the last. The PRD written before touching code is what made this fast.</li>
+            </ul></div>
+          </div>
+          <div class="aci"><button class="acb" onclick="tacc(this)">▸ Build process: 10 sequential steps <span class="ch">▼</span></button>
+            <div class="acbd"><div class="steps">
+              <div class="step"><span class="sn">01</span><span>Design tokens: colours, type, spacing</span></div>
+              <div class="step"><span class="sn">02</span><span>TypeScript interfaces for all domain objects</span></div>
+              <div class="step"><span class="sn">03</span><span>Supabase schema, 7 tables, RLS policies</span></div>
+              <div class="step"><span class="sn">04</span><span>Market data service + Redis caching layer</span></div>
+              <div class="step"><span class="sn">05</span><span>Claude signal engine + portfolio parsers</span></div>
+              <div class="step"><span class="sn">06</span><span>9 API routes (signals, portfolio, market, watchlist)</span></div>
+              <div class="step"><span class="sn">07</span><span>Auth + Google OAuth</span></div>
+              <div class="step"><span class="sn">08</span><span>4-step onboarding wizard</span></div>
+              <div class="step"><span class="sn">09</span><span>Dashboard, signal cards, detail drawer</span></div>
+              <div class="step"><span class="sn">10</span><span>Polish, CI/CD, deploy to Vercel</span></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="tags" style="margin-top:18px"><span class="tag">Next.js 14</span><span class="tag">Supabase</span><span class="tag">Claude API</span><span class="tag">Claude Code</span><span class="tag">Figma + MCP</span><span class="tag">Vercel</span><span class="tag">Upstash Redis</span></div>
+      </div>
+    </div>
+
+    <!-- WAYPOINT -->
+    <div class="pc">
+      <div class="pt"><div><div class="p-ti">Waypoint.ai</div><p class="p-q"><strong>The question:</strong> What's the difference between assembling an app from AI-generated blocks and composing a product with real design intent?</p></div><div class="badge">Shipped</div></div>
+      <div class="pb">
+        <p class="p-le"><strong>What I learned:</strong> Composition is a design skill, not just a technical one. Choosing which components to use, how they relate to each other, and where to break from the library's defaults requires the same product judgment as deciding what goes on a roadmap.</p>
+        <div class="ps">
+          <div class="psc"><div class="sl">Component source</div><div class="sv" style="font-size:18px">21st.dev</div><div class="ss">AI-native UI primitives</div></div>
+          <div class="psc"><div class="sl">Key takeaway</div><div class="sv" style="font-size:18px">Architecture &gt; assembly</div><div class="ss">Composition is a skill</div></div>
+        </div>
+        <div class="tags"><span class="tag">21st.dev</span><span class="tag">React</span><span class="tag">Tailwind CSS</span></div>
+      </div>
+    </div>
+
+    <!-- QUILLION -->
+    <div class="pc">
+      <div class="pt"><div><div class="p-ti">Quillion — Quiz Generation App</div><p class="p-q"><strong>The question:</strong> Can AI tools take a product idea from zero to functional without writing code?</p></div><div class="badge">Shipped</div></div>
+      <div class="pb">
+        <p class="p-le"><strong>What I learned:</strong> AI app builders are excellent for validation and poor for iteration. The v1 comes fast, but the moment you need to deviate from what the tool assumed, you're fighting it. I now evaluate AI tools the same way I evaluate any product: by their constraints, not their demos.</p>
+        <div class="ps">
+          <div class="psc"><div class="sl">Build time</div><div class="sv">~5 hours</div><div class="ss">Across two platforms</div></div>
+          <div class="psc"><div class="sl">Key takeaway</div><div class="sv" style="font-size:18px">AI generates; PMs curate</div><div class="ss">Lovable = speed, Replit = control</div></div>
+        </div>
+        <div class="tags"><span class="tag">Lovable</span><span class="tag">Replit</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PUTTING IT TOGETHER -->
+<section class="sec">
+  <div class="wrap">
+    <span class="label">Putting It Together</span>
+    <h2 class="sh">Where strategy meets building</h2>
+    <p class="sh-sub">Three industries. Three roles. One consistent thread: the ability to read a complex system, identify the highest-leverage problem, and move toward a solution that scales.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="dot d1"></div><div><div class="pt2">A decade of building across industries and stages.</div><p class="pb2"><strong>$4M+ SaaS revenue through 0→1 product launches. 50% improvement in client content turnaround. 60% operational efficiency gain. Two promotions in four years. PMO Excellence Award 2025.</strong> These came from knowing which problems to solve and in what order.</p></div></div>
+      <div class="pillar"><div class="dot d2"></div><div><div class="pt2">Operator instincts inside a product leadership role.</div><p class="pb2">I started as an engineer — optimising real systems under real constraints. Before product management, I built a business case that moved $50M at board level. That background shapes how I think about product decisions: with a strong bias toward what's actually true about the system, not what's convenient to assume.</p></div></div>
+      <div class="pillar"><div class="dot d3"></div><div><div class="pt2">AI as a genuine capability, not a talking point.</div><p class="pb2">Five projects built, four in production. <strong>A Gen AI pipeline serving enterprise pharma clients globally. A full-stack SaaS deployed over a weekend. An agentic tool actively used by my direct reports.</strong> The progression from using AI to building systems that run on AI creates a different kind of product intuition — one that matters in roadmap conversations, architecture reviews, and decisions about where AI creates real value versus where it's just a feature checkbox.</p></div></div>
+      <div class="pillar"><div class="dot d4"></div><div><div class="pt2">Velocity that comes from clarity.</div><p class="pb2">Portfolio IQ went from concept to deployed product in a weekend. The Gen AI pipeline went from a scoped need to production across 7 markets. The Executive Copilot went from a team friction I noticed to a tool my junior PMs use every day. That comes from clear specs, right tools, and knowing which decisions to make now versus defer. In teams, it shows up as crisp PRDs, unambiguous success criteria, and fewer realignment cycles.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cw">
+      <div class="ch2">Say hello.</div>
+      <p class="cp">I'm always open to conversations about product strategy, Gen AI in regulated industries, or building at the intersection of product and engineering. If something here resonated, I'd welcome a conversation.</p>
+      <div class="cbs">
+        <a href="mailto:manaswin.pandey@gmail.com" class="cb2 pr">manaswin.pandey@gmail.com</a>
+        <a href="https://linkedin.com/in/manaswinpandey" target="_blank" class="cb2 ou">LinkedIn</a>
+        <a href="tel:+919708016081" class="cb2 ou">+91 97080 16081</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Manaswin Pandey · Gurugram, India</span>
+  <span>Built with Claude, shipped with taste.</span>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>36));
+function tog(btn,id){const p=document.getElementById(id);const o=p.classList.toggle('op');btn.classList.toggle('op',o)}
+function tacc(btn){const body=btn.nextElementSibling;const was=body.classList.contains('op');btn.closest('.acc').querySelectorAll('.acbd').forEach(b=>b.classList.remove('op'));btn.closest('.acc').querySelectorAll('.acb').forEach(b=>b.classList.remove('op'));if(!was){body.classList.add('op');btn.classList.add('op')}}
+</script>
+</body>
+</html>
