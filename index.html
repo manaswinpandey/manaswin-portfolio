@@ -125,7 +125,14 @@ nav.sc{background:rgba(237,235,228,.94);backdrop-filter:blur(8px);border-color:v
 .p-le{font-size:14px;color:var(--t2);line-height:1.8;text-align:justify;margin-bottom:18px;max-width:580px}
 .p-le strong{color:var(--t1);font-weight:500}
 
-/* 2-col stat grid */
+/* PROJECT LINKS */
+.plinks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.plink{font-family:var(--mono);font-size:11px;padding:7px 14px;border:1px solid var(--b2);color:var(--t2);text-decoration:none;border-radius:2px;letter-spacing:.03em;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:6px}
+.plink:hover{border-color:var(--ac);color:var(--ac);background:var(--ac2)}
+.plink.pri{background:var(--ac2);border-color:var(--ac3);color:var(--ac)}
+.plink.pri:hover{background:var(--ac);color:#f2f0e9}
+
+/* PROJECT LINKS */
 .ps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--b1);border-radius:2px;overflow:hidden;margin-bottom:18px}
 .psc{padding:13px 16px;background:var(--bg2)}
 .psc:nth-child(odd){border-right:1px solid var(--b1)}
@@ -381,6 +388,9 @@ footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spac
           <div class="psc"><div class="sl">Architecture</div><div class="sv" style="font-size:18px">Multi-agent</div><div class="ss">Workflow, crisis, exec comms agents</div></div>
           <div class="psc"><div class="sl">Design principle</div><div class="sv" style="font-size:18px">HITL by design</div><div class="ss">Brackets force judgment, not abdication</div></div>
         </div>
+        <div class="plinks">
+          <a href="https://executive-update-copilot-266213257796.us-central1.run.app/" target="_blank" class="plink pri">⬡ Live app</a>
+        </div>
         <div class="tags"><span class="tag">Vertex AI</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">FastAPI</span><span class="tag">Google Cloud Run</span><span class="tag">Multi-agent</span></div>
       </div>
     </div>
@@ -445,6 +455,12 @@ footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spac
             </div></div>
           </div>
         </div>
+        <div class="plinks">
+          <a href="https://portfolioiq-orcin.vercel.app/" target="_blank" class="plink pri">⬡ Live site</a>
+          <a href="https://docs.google.com/document/d/1W_d-sEj8Rq42sY8_xyx7fq758bNppGvR/edit" target="_blank" class="plink">◻ Full PRD</a>
+          <a href="https://www.figma.com/design/hs9x5tL9V5SGZkSafwS8wF/PortfolioIQ-Design-System?node-id=2-7&p=f" target="_blank" class="plink">◱ Figma designs</a>
+          <a href="https://github.com/anuraagburman/portfolioiq" target="_blank" class="plink">⌥ GitHub</a>
+        </div>
         <div class="tags" style="margin-top:18px"><span class="tag">Next.js 14</span><span class="tag">Supabase</span><span class="tag">Claude API</span><span class="tag">Claude Code</span><span class="tag">Figma + MCP</span><span class="tag">Vercel</span><span class="tag">Upstash Redis</span></div>
       </div>
     </div>
@@ -457,6 +473,9 @@ footer span{font-family:var(--mono);font-size:10.5px;color:var(--t3);letter-spac
         <div class="ps">
           <div class="psc"><div class="sl">Component source</div><div class="sv" style="font-size:18px">21st.dev</div><div class="ss">AI-native UI primitives</div></div>
           <div class="psc"><div class="sl">Key takeaway</div><div class="sv" style="font-size:18px">Architecture &gt; assembly</div><div class="ss">Composition is a skill</div></div>
+        </div>
+        <div class="plinks">
+          <a href="https://thewaypoint.ai/" target="_blank" class="plink pri">⬡ Live site</a>
         </div>
         <div class="tags"><span class="tag">21st.dev</span><span class="tag">React</span><span class="tag">Tailwind CSS</span></div>
       </div>
